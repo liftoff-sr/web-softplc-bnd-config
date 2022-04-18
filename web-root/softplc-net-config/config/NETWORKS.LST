@@ -1,0 +1,9 @@
+# See "man interfaces(5)" for info.
+
+auto ethernet0
+iface ethernet0 inet static
+    address ADDRESS
+    netmask NETMASK
+    gateway GATEWAY
+    dns-nameserver 8.8.8.8
+    dns-nameserver 8.8.4.4
