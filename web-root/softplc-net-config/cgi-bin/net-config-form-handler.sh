@@ -14,6 +14,7 @@ CFG="$WEBROOT/config"
 my_ip="192.168.1.100"
 subnet_mask="255.255.255.0"
 gateway_ip="192.168.1.1"
+config_num=0
 
 
 source $WEBROOT/cgi-bin/cgi-funcs.sh
@@ -30,6 +31,7 @@ sed -E \
     -e "s@[ \t]+gateway[ \t]+GATEWAY@\tgateway $gateway_ip@" \
     $CFG/NETWORKS.LST > /etc/NETWORKS.LST
 
+echo "$config_num" > /SoftPLC/run/CONFIGNUM.TXT
 
 echo "echo \"" > /tmp/temp.out
 # escape the double quotes

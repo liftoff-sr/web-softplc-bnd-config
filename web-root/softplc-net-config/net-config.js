@@ -57,6 +57,7 @@ function on_doc_ready()
             $( '#_my_ip' ).val( my_ip );
             $( '#_gateway_ip' ).val( gateway_ip );
             $( '#_subnet_mask' ).val( subnet_mask );
+            $( '#_config_num' ).val( config_num );
         }
     });
 }

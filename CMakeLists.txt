@@ -1,31 +1,30 @@
 
 # Use CMake to build a Debian package
 
-project( web-softplc-net-config )
+project( web-softplc-bnd-config )
 
 cmake_minimum_required( VERSION 3.5 FATAL_ERROR )
 
 set( CPACK_PACKAGE_VERSION_MAJOR 1 )
 
-set( CPACK_PACKAGE_VERSION_MINOR 1 )        # 15-Feb-2020
-#set( CPACK_PACKAGE_VERSION_MINOR 0 )        # 9-Feb-2020
+set( CPACK_PACKAGE_VERSION_MINOR 0 )        # 18-Apr-2022
 
 set( CPACK_PACKAGE_VERSION_PATCH 0 )
 set( CPACK_PACKAGE_CONTACT "Dick Hollenbeck <dick@softplc.com>" )
-set( CPACK_PACKAGE_DESCRIPTION_SUMMARY "SoftPLC Network Configuration Web UI" )
+set( CPACK_PACKAGE_DESCRIPTION_SUMMARY "SoftPLC Network Configuration Web UI for BnD" )
 
-set( DOCROOT web-root/softplc-net-config )
+set( DOCROOT web-root/softplc-bnd-config )
 
 install(
     FILES
-        web-softplc-net-config.service
+        web-softplc-bnd-config.service
     DESTINATION
         etc/systemd/system
     )
 
 install(
     FILES
-        web-softplc-net-config.conf
+        web-softplc-bnd-config.conf
     DESTINATION
         etc
     )
@@ -87,7 +86,7 @@ install(
 
 
 file( WRITE ${CMAKE_BINARY_DIR}/conffiles
-    "/etc/http-net-config.conf" "\n"
+    "/etc/web-softplc-bnd-config.conf" "\n"
     )
 set( CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA ${CMAKE_BINARY_DIR}/conffiles )
 
