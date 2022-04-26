@@ -1,3 +1,3 @@
 #!/bin/bash
 
-systemctl disable --now web-softplc-net-config
+systemctl disable --now web-softplc-bnd-config

@@ -4,6 +4,7 @@ const ipformat = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|
 
 function validate_ip_address( inputText, context )
 {
+    // alert("Validating");
     if( inputText.val().match(ipformat) )
     {
         return true;
@@ -11,7 +12,13 @@ function validate_ip_address( inputText, context )
     else
     {
         alert("You have entered an invalid " + context);
-        inputText.focus();
+
+        $( '#ethernet-tab' ).tab( 'show' );
+
+        setTimeout( () => {
+            inputText.focus();
+        }, 300 );
+
         return false;
     }
 }

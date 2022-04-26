@@ -3,4 +3,4 @@
 
 systemctl daemon-reload
 
-systemctl enable --now web-softplc-net-config
+systemctl enable --now web-softplc-bnd-config

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WEBROOT=/web-root/softplc-net-config
+WEBROOT=/web-root/softplc-bnd-config
 
 
 # assume PWD uses cgi-bin from this:

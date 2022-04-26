@@ -11,7 +11,7 @@ set( CPACK_PACKAGE_VERSION_MINOR 0 )        # 18-Apr-2022
 
 set( CPACK_PACKAGE_VERSION_PATCH 0 )
 set( CPACK_PACKAGE_CONTACT "Dick Hollenbeck <dick@softplc.com>" )
-set( CPACK_PACKAGE_DESCRIPTION_SUMMARY "SoftPLC Network Configuration Web UI for BnD" )
+set( CPACK_PACKAGE_DESCRIPTION_SUMMARY "SoftPLC Network and Personality Configuration Web UI for BnD" )
 
 set( DOCROOT web-root/softplc-bnd-config )
 
@@ -80,6 +80,7 @@ install(
 install(
     FILES
         ${DOCROOT}/images/sm_splc_colorlogo_trans.png
+        ${DOCROOT}/images/BnD_Master_Logo_A.png
     DESTINATION
         ${DOCROOT}/images
     )
@@ -94,12 +95,13 @@ set( CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA ${CMAKE_BINARY_DIR}/conffiles )
 set( CMAKE_INSTALL_PREFIX "" )
 
 # CPack variables
-set( CPACK_DEBIAN_PACKAGE_NAME web-softplc-net-config )
+set( CPACK_DEBIAN_PACKAGE_NAME web-softplc-bnd-config )
 set( CPACK_DEBIAN_PACKAGE_ARCHITECTURE all )
 set( CPACK_DEBIAN_PACKAGE_SECTION embedded )
 set( CPACK_DEBIAN_PACKAGE_PRIORITY optional )
 set( CPACK_DEBIAN_PACKAGE_DEPENDS "busybox, web-bootstrap" )
 set( CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA
+    ${CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA}
     ${CMAKE_CURRENT_SOURCE_DIR}/postinst
     ${CMAKE_CURRENT_SOURCE_DIR}/prerm
     )

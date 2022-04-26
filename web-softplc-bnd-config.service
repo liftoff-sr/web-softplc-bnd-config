@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 # Read settings out of this file:
-EnvironmentFile=/etc/web-softplc-net-config.conf
+EnvironmentFile=/etc/web-softplc-bnd-config.conf
 
 # Pass settings to busybox httpd:
 ExecStart=/bin/busybox httpd -c ${DOCROOT}/httpd.conf -h ${DOCROOT} -p ${PORT}
@@ -13,4 +13,3 @@ Type=forking
 
 [Install]
 WantedBy=multi-user.target
-Alias=httpd.service
